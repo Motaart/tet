@@ -1,0 +1,47 @@
+name = "piper-tts-platform"
+type = "javascript"
+account_id = ""
+workers_dev = true
+main = "dist/index.js"
+compatibility_date = "2024-01-01"
+
+# Build configuration
+[build]
+command = "pnpm install && pnpm run build"
+cwd = "./"
+
+[build.upload]
+format = "modules"
+
+# Development environment
+[env.development]
+name = "piper-tts-dev"
+workers_dev = true
+
+# Production environment
+[env.production]
+name = "piper-tts-prod"
+workers_dev = false
+route = ""
+zone_id = ""
+
+# Observability
+[observability]
+enabled = false
+
+# Limits
+limits = { cpu_ms = 50000 }
+
+# Triggers
+[triggers]
+crons = []
+
+# Environment variables
+[env.production.vars]
+ENVIRONMENT = "production"
+
+[env.development.vars]
+ENVIRONMENT = "development"
+
+# Compatibility flags
+compatibility_flags = ["nodejs_compat"]

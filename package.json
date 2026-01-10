@@ -1,0 +1,20 @@
+{
+  "name": "piper-tts-platform",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "download-model": "node scripts/download-model.mjs"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "@mintplex-labs/piper-tts-web": "^1.0.4",
+    "onnxruntime-web": "^1.23.2"
+  }
+}
